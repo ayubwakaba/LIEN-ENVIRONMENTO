@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+ <html lang="en">
+   <head>
+   <meta charset="UTF-8"> <meta name="viewport" content="width=device-width", initial-scale ="1.0"> <title>E-Home</title>
+    <style>
+       body { font-family: 'Segoe UI', sans-serif; background-color:green; margin: 0; padding: 0; } 
+       .container { max-width: 800px; margin: 40px auto; padding: 20px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; font-size: 28px; margin-bottom: 20px; } 
+        h2 { color: #2c3e50; font-size: 28px; margin-bottom: 20px; } 
+        h3,h4 { color: #2c3e50; font-size: 28px; margin-bottom: 20px; } 
+        p { font-size: 16px; line-height: 1.6; color: #333333; margin-bottom: 20px; } 
+        .page-container { display: flex; height: 100vh; overflow: auto; } 
+        .slideshow-container { width: 50%; position: relative; overflow: hidden; } 
+        .slide { position: absolute; width: fit-content; height:100%; object-fit: contain; opacity: 0; transition: opacity 1s ease-in-out; }
+         .slide.active { opacity: 1; } .story-container { width: 75%; padding: 25px; overflow-y: auto; background-color: #f9f9f9; } </style>
+         </head>
+          <body> <div class="page-container"> <!-- Slideshow on the left --> <div class="slideshow-container"> <img class="slide active" src="defforestation2.jpg" alt="Polluted Forest Stream in Kenya"> <img class="slide" src="deforestation.jpg" alt="Child in Kenyan Forest"> <img class="slide" src="riverside.jpg" alt="Tree Planting in Kenya"> </div> <!-- Story on the right -->
+             <div class="story-container"> <h1>SHORT STORY</h1> <p> It began with a walk through a forest that once sang with birdsong and rustled with life. Now, silence echoes where vibrancy once thrived. Our environment is not just a backdrop to our lives,it’s the heartbeat of our planet. Every tree, every stream, every breath of wind carries the story of our shared home.</p> 
+              <p>Discover the science behind climate change and biodiversity loss and explore indigenous wisdom and sustainable practices understand how everyday choices impact the planet.</p> 
+              <h3>DID YOU KNOW?</h3> <p>For the past 5 years, over five million trees has been cut down endangering habitat for animals and also conducive environment for human beings.Besides that 465,000 tonnes of package waste is generated annually with a recycling rate of about 8-10%. Join Environmento team local clean-up efforts and reforestation projects reduce, reuse and rethink consumption habits. </p> 
+              <h2>OUR OBJECTIVES</h2> <p>-Environmental awareness: Educate visitors on climate change,pollution and sustainable practises.</p>
+               <p>-Promote local green initiatives: Showcase tree planting drives,clean up events and eco-hustles in kenyan universities.</p>
+   <p>-Mobilize community action : Encourage sign ups,donations and even paid/volunteer participation in environmental projects.</p>
+    <p>-Higlight success stories: Feature local champions and clubs that are making a green impact.</p>
+     <p>-Offer eco-friendly products: Promote eco friendly products.</p> 
+     <p>-Suggest appropriate type of tree in a region ... coming soon...</p>
+     <h4>OUR MISSION</h4> 
+     <p>-To plant over 500 million trees and employ the youth in Environment.</p>
+    </div> <script> const slides = document.querySelectorAll('.slide'); let current = 0; setInterval(() => { slides[current].classList.remove('active'); current = (current + 1) % slides.length; slides[current].classList.add('active'); }, 4000); </script> </body> </body> </html>

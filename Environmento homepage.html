@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Environmento.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+ nav {
+      background: #0b6b3a;
+      color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+    }
+
+    nav h1 {
+      font-family: "Times New Roman", Times, serif;
+      font-weight: bold;
+      color: white;
+      margin: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .nav-links a {
+      color: black;
+      text-decoration: none;
+      padding: 8px 14px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: grey;
+    }
+
+    
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      max-width: 2000px;
+      height: 800px;
+      overflow: hidden;
+    }
+
+    
+    .footer{
+      width: 100%;
+      text-align: center;
+      background-color: #0b6b3a;
+      color: rgb(2, 0, 0);
+      padding: 20px 0;
+      position: fixed;
+      bottom: -100px;
+      left: 0;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+
+    
+    @keyframes popUp {
+      0% {
+        bottom: -100px;
+        opacity: 0;
+      }
+      100% {
+        bottom: 0;
+        opacity: 1;
+      }
+    }
+
+    
+    .content {
+      height: 1500px;
+      padding: 40px;
+      text-align: center;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+</style>
+
+</head>
+<body class="bg-gray-50 font-sans">
+
+
+  <nav class="bg-green-800 shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+    <h1 class="text-white text-2xl font-bold tracking-wide">
+      ENVIRONMENTO
+    </h1>
+
+    <div class="nav-links flex space-x-6">
+      <a href="Home2.html" class="nav-link">Home</a>
+      <a href="https://forms.gle/Uzu6KvvfxvzrTwLF8" class="nav-link">Volunteer</a>
+      <a href="Easytrack.html" class="nav-link">Easy Track</a>
+      <a href="Donate.html" class="nav-link">Donation</a>
+      <a href="Chatroom.html" class="nav-link">Chatroom</a>
+      <a href="Productpg.html" class="nav-link">Products</a>
+      <a href="New Environmental.html" class="nav-link">Logout</a>
+    </div>
+  </nav>
+  </nav>
+
+
+
+  
+  <div class="main-content">
+    <h3>ENVIRONMENTO NEW'S UPDATE</h3>
+  </div>
+  <body>
+  <nav class="navbar">
+    
+  </nav>
+
+  <div class="slideshow-container">
+    <div class="slide fade">
+      <img src="collection.png" alt="Slide 1">
+      <div class="caption"><strong>'Fresh air creates conducive environment'</strong></div>
+    </div>
+    <div class="slide fade">
+      <img src="Greenenv.jpeg" alt="Slide 2">
+      <div class="caption"><strong>'Green is our planet'</strong></div>
+    </div>
+    <div class="slide fade">
+      <img src="Youth.png" alt="Slide 3">
+      <div class="caption"><strong>'Proper plastic disposal'</strong></div>
+    </div>
+  </div>
+
+
+ 
+</body>
+
+
+  
+  <footer class="footer">
+    <p>Contact us on: +254711327991</p>
+    <p>Email:info@environmento.com</p>
+    &copy; 2025 ENVIROMENTO. All rights reserved.
+  </footer>
+  <script>
+    let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1;}
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 5000);
+}
+
+  </script>
+
+
+</body>
+</html>

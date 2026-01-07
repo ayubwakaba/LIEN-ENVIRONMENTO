@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width",initialscale="1.0">
+  <title>E-Donation</title>
+  <div class="header"><p>Let's protect our future together</p></div>
+  <link rel="stylesheet" href="Donate.css">
+</head>
+
+<body>
+  <div style="height:45px; background :white;">
+  </div>
+
+  <form id="myForm">
+    <h2>Your Details</h2>
+    <input type="text" placeholder="First name" id="first" required>
+    <input type="text" placeholder="Last name"  id="last" required>
+    <input type="email" placeholder="Email Address" id="email" required>
+    <input type="tel" placeholder="Phone Number" id="phone" required>
+    <input type="text" placeholder="Street Address" id="street" required>
+    <input type="text" placeholder="City" id="city" required>
+    <Label for="county"><strong>County</strong></Label>
+      <select name = "county">
+      <option value="">--Select a Country--</option>
+      <option value = "Australia">Kenya</option>
+      <option value = "Austria">Austria></option>
+      <option value = "Belgium">Embu</option>
+      <option value = "Canada">Machakos</option>
+      <option value = "Djibouti">Kilifi</option>
+      <option value = "Egypt">Mombasa</option>
+      <option value = "U.S.A">Meru</option>
+      <option value = "Kenya">Kenya</option>
+      <option value = "Kuwait">Kuwait</option>
+      <option value = "South Africa">South Africa</option>
+      <option value = "Zambia">Zambia</option>
+    <input type="text" placeholder="Postal Code" id="postal" required>
+      <br><button type="Submit">Submit</button></br>
+  </form>
+  <div id="messageBox" style="margin-top:10px;
+  color:green;"></div>
+
+
+  <section id="payment">
+    <h3>Payment Method</h3>
+    <select id="paymentMethod" onchange="togglePaymentFields()">
+      <option value="mobileMoney">Mobile Money (M-Pesa)</option>
+      <option value="creditCard">Credit Card</option>
+      <input type="values" placeholder="CVV">
+    </select>
+
+    <div id="mobileMoneyFields">
+      <label>
+        M-Pesa Phone Number:
+        <input type="tel" id="mpesaNumber" placeholder="e.g. 07XXXXXXXX">
+      </label>
+    </div>
+
+    <div id="creditCardFields" style="display:none">
+      <label>
+        Card Number:
+        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+      </label>
+      <label>
+        Expiry Date:
+        <input type="month" id="expiry">
+      </label>
+      <div>
+        CVV:
+        <input type="text" id="cvv" placeholder="12345678" maxlength="8">
+        
+       
+
+    </div>
+  </section>
+  <input type="text" id ="Amount" placeholder="Amount">
+  <button id="Donate">Donate</button>
+  <div id="truck"></div>
+  <p id="message"></p>
+      
+<div class="img-footer">
+  <p>NB:Your support towards green environment is appreciated</p>
+
+ <img src = "Tiktok.png " alt="TIKTOK">
+<img src="FACEBOOK.png" alt ="FACEBOOK">
+<img src="INSTAGRAM.jpeg" alt ="INSTAGTRAM">
+</div>
+
+</body>
+</html> 

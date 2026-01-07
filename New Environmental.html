@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Environmento</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Environmento.css">
+</head>
+<body>
+ <body>
+  <header class="header">
+    <img src="Environmento icon.png" alt="Environmento Logo" class="logo">
+    <h1 class="site-name">
+      <span class="green">E</span><span class="yellow">n</span><span class="green">v</span><span class="yellow">i</span>
+      <span class="green">r</span><span class="yellow">o</span><span class="green">n</span><span class="yellow">m</span>
+      <span class="green">e</span><span class="yellow">n</span><span class="green">t</span><span class="yellow">o</span>
+    
+    </h1>
+  </header>
+
+  <section class="signup-section">
+  <h2>Welcome to Environmento register or Login if you already have an account</h2>
+<form class="signup-form" action="#" method="POST">
+  <label for="name">Full Name</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="userInput">Email Address/Phone Number</label>
+  <input type="text" id="userInput" name="emailOrPhone" required>
+
+  <label for="password">Password</label>
+  <input type="password" id="password" name="password" required>
+
+  <div class="button-row">
+    
+    <button type="button" id="registerBtn" onclick="showConfirmation()">
+      <span id="registerText">Register</span>
+      <span id="registerSpinner" style="display: none;"></span>
+    </button>
+
+    
+    <button type="button" class="right-button" onclick="goToHomepage()" id="loginBtn">
+      <span id="loginText">Login</span>
+      <span id="spinner" style="display: none;"></span>
+    </button>
+  </div>
+
+  <div id="loadingCircle" style="display: none;"></div>
+</form>
+
+
+<div id="confirmationOverlay" style="display: none;">
+  <div class="overlay-content">
+    <h2>Verify Your Account</h2>
+
+    <label for="confirmName">Full Name</label>
+    <input type="text" id="confirmName" placeholder="Enter your full name" required>
+
+    <label for="confirmContact">Email or Phone</label>
+    <input type="text" id="confirmContact" placeholder="Enter your email or phone" required>
+
+    <div id="countdownSection" style="display: none; margin-top: 15px;">
+      <p>Enter the verification code (expires in <span id="countdown">60</span>s):</p>
+      <input type="text" id="verificationCode" placeholder="Verification code">
+      <button onclick="submitVerification()">Submit</button>
+    </div>
+
+    <p id="successMessage" style="display: none; color: green; font-weight: bold; margin-top: 10px;">
+      ✅ Account created successfully!
+    </p>
+  </div>
+</div>
+
+<script>
+  function showConfirmation() {
+    const form = document.querySelector('.signup-form');
+    const overlay = document.getElementById('confirmationOverlay');
+
+    
+    form.style.filter = 'blur(5px)';
+    form.style.pointerEvents = 'none';
+    overlay.style.display = 'flex';
+
+    
+    document.getElementById('confirmName').addEventListener('input', checkInputs);
+    document.getElementById('confirmContact').addEventListener('input', checkInputs);
+  }
+
+  function checkInputs() {
+    const name = document.getElementById('confirmName').value.trim();
+    const contact = document.getElementById('confirmContact').value.trim();
+    const countdownSection = document.getElementById('countdownSection');
+
+    if (name && contact && countdownSection.style.display === 'none') {
+      countdownSection.style.display = 'block';
+      startCountdown();
+    }
+  }
+
+  function startCountdown() {
+    let timeLeft = 60;
+    const countdownDisplay = document.getElementById('countdown');
+
+    countdownDisplay.textContent = timeLeft;
+    const interval = setInterval(() => {
+      timeLeft--;
+      countdownDisplay.textContent = timeLeft;
+
+      if (timeLeft <= 0) {
+        clearInterval(interval);
+        countdownDisplay.textContent = "expired";
+        document.getElementById('verificationCode').disabled = true;
+      }
+    },3000);
+  }
+
+  function submitVerification() {
+    const code = document.getElementById('verificationCode').value.trim();
+    const successMessage = document.getElementById('successMessage');
+
+    if (!code) {
+      alert("Please enter the verification code.");
+      return;
+    }
+
+    successMessage.style.display = 'block';
+
+    setTimeout(() => {
+      closeOverlay();
+    }, 4000);
+  }
+
+  function closeOverlay() {
+    const form = document.querySelector('.signup-form');
+    const overlay = document.getElementById('confirmationOverlay');
+
+    form.style.filter = 'none'; 
+    form.style.pointerEvents = 'auto';
+    overlay.style.display = 'none';
+  }
+
+  function goToHomepage() {
+    const input = document.getElementById('userInput').value;
+    if (input.trim() === "") {
+      alert("Please enter your email or phone number.");
+      return;
+    }
+
+    document.getElementById('spinner').style.display = 'inline-block';
+    document.getElementById('loginText').textContent = 'Logging in...';
+    document.getElementById('loginBtn').disabled = true;
+
+    setTimeout(() => {
+      window.location.href = "Environmento homepage.html";
+    },2000);
+  }
+</script>
+
+</section>
+
+</body>
+</html>

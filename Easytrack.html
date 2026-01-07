@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kenya Plastic Recycling Dashboard</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f9fafb;
+    }
+
+    
+    nav {
+        background: #166534;
+        color: white;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav h1 {
+        margin: 0;
+        font-size: 20px;
+    }
+
+    nav select {
+        padding: 6px;
+        border-radius: 4px;
+        border: none;
+    }
+
+    
+    .container {
+        max-width: 700px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .county-name {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #065f46;
+    }
+
+    .bar {
+        width: 100%;
+        height: 28px;
+        background: #dc2626; 
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .recycled {
+        height: 100%;
+        background: #16a34a; 
+        transition: width 0.5s ease;
+    }
+
+    .percent {
+        margin-top: 10px;
+        font-size: 15px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 15px;
+        font-size: 13px;
+        color: #555;
+    }
+</style>
+</head>
+
+<body>
+
+
+<nav>
+    <h1>Kenya Plastic Recycling Tracker (2025)</h1>
+    <select id="countySelect" onchange="updateCounty()">
+        <option value="Nairobi">Nairobi</option>
+        <option value="Kiambu">Kiambu</option>
+        <option value="Meru">Meru</option>
+        <option value="Embu">Embu</option>
+        <option value="Mombasa">Mombasa</option>
+        <option value="Kisumu">Kisumu</option>
+    
+    </select>
+</nav>
+
+
+<div class="container">
+    <div class="county-name" id="countyName">Nairobi County</div>
+
+    <div class="bar">
+        <div class="recycled" id="recycledBar" style="width:45%;"></div>
+    </div>
+
+    <div class="percent" id="percentText">
+         Recycled: 45% &nbsp;&nbsp; 🔴 Not Recycled: 55%
+    </div>
+</div>
+
+<footer>
+    Sample plastic recycling statistics for educational use – 2025
+</footer>
+
+<script>
+    
+    const data = {
+        Nairobi: 45,
+        Kiambu: 30,
+        Meru: 25,
+        Embu: 20,
+        Mombasa: 35,
+        Kisumu: 28
+        
+    };
+
+    function updateCounty() {
+        const county = document.getElementById("countySelect").value;
+        const recycled = data[county];
+        const notRecycled = 100 - recycled;
+
+        document.getElementById("countyName").innerText = county + " County";
+        document.getElementById("recycledBar").style.width = recycled + "%";
+        document.getElementById("percentText").innerHTML =
+            "Recycled: " + recycled + "% &nbsp;&nbsp; 🔴 Not Recycled: " + notRecycled + "%";
+    }
+</script>
+
+</body>
+</html>
